@@ -1,0 +1,221 @@
+<div id="main">
+  <div class="container">
+    <div class="main-body">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img
+          src="../../assets/logo.png"
+          (click)="profile()"
+          width="80"
+          height="50"
+          alt=""
+          loading="lazy"
+          style="cursor: pointer"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" (click)="feed()">Feed </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="profile()"
+                >Profile <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a (click)="takeMeToReports()" class="nav-link">Feedback</a>
+            </li>
+
+            <li class="nav-item">
+              <a (click)="logOutStudent()"
+                ><i class="fas fa-sign-out-alt"></i>
+              </a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      <div id="id01" class="modal">
+        <form
+          class="modal-content animate"
+          action="/action_page.php"
+          method="post"
+        >
+          <div class="imgcontainer">
+            <span
+              onclick="document.getElementById('id01').style.display='none'"
+              class="close"
+              title="Close Modal"
+              >&times;</span
+            >
+          </div>
+
+          <div class="container">
+            <app-reports-to-admin></app-reports-to-admin>
+          </div>
+
+          <div class="container" style="background-color: #f1f1f1">
+            <button
+              type="button"
+              onclick="document.getElementById('id01').style.display='none'"
+              class="cancelbtn"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body profile">
+              <img class="cover" src="../../assets/cover.jpg" />
+              <div class="d-flex flex-column align-items-center text-center">
+                <img
+                  src="{{ this.local.user?.image }}"
+                  alt="Admin"
+                  class="avatar"
+                  width="200"
+                />
+                <div class="personal-data">
+                  <h4>
+                    {{ this.local.user?.name }}
+                  </h4>
+
+                  <button class="btn btn-outline-primary">edit profile</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-3">
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+              >
+                <h6 class="mb-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-facebook mr-2 icon-inline text-primary"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    ></path></svg
+                  >Facebook
+                </h6>
+                <span class="text-secondary">dzxxqs</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-8 companies-container">
+          <div class="card" *ngFor="let element of posts">
+            <img
+              class="card-img-top"
+              src="{{ this.element?.image }}"
+              alt="Card image cap"
+              (click)="hello(this.element)"
+            />
+            <div class="card-body">
+              <h5 class="card-title">{{ this.element?.title }}</h5>
+              <p class="card-text">{{ this.element?.description }}</p>
+              <div class="btns">
+                <a
+                  class="btn btn-primary"
+                  (click)="
+                    apply({
+                      title: this.element.title,
+                      owner: this.element.owner,
+                      studentName: this.local.message
+                    })
+                  "
+                  >apply</a
+                >
+                <a class="btn btn-primary" (click)="report(this.element)"
+                  >Report</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="hello" class="modal">
+          <form
+            class="modal-content animate"
+            action="/action_page.php"
+            method="post"
+          >
+            <div class="imgcontainer">
+              <span
+                onclick="document.getElementById('hello').style.display='none'"
+                class="close"
+                title="Close Modal"
+                >&times;</span
+              >
+            </div>
+
+            <div class="container">
+              <app-post></app-post>
+            </div>
+
+            <div class="container" style="background-color: #f1f1f1"></div>
+          </form>
+        </div>
+
+        <div id="report" class="modal">
+          <form
+            class="modal-content animate"
+            action="/action_page.php"
+            method="post"
+          >
+            <div class="imgcontainer">
+              <span
+                onclick="document.getElementById('report').style.display='none'"
+                class="close"
+                title="Close Modal"
+                >&times;</span
+              >
+            </div>
+
+            <div class="container">
+              <app-report></app-report>
+            </div>
+
+            <div class="container" style="background-color: #f1f1f1"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.all {
+  width: 50%;
+  margin-left: 25%;
+}
+#first,
+#second,
+#third,
+#forth,
+#fifth,
+#six,
+#seven,
+#eight {
+  margin-top: 10%;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}

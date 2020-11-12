@@ -1,0 +1,178 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" (click)="backToProfile()">Profile</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="studentApply()"
+          >Notifications <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="ownPosts()">Posts</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Search..."
+        name="search"
+        #search
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        (click)="searchProfil(search.value)"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
+<!--profile-->
+
+<div class="main-panel">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="cover-image">
+                <img src="{{ this.userData?.logo }}" class="img img-fluid" />
+              </div>
+            </div>
+
+            <div class="profile-content">
+              <div class="profile-name">Name :</div>
+              <input
+                type="text"
+                value="{{this.userData?.name}}"
+                #name
+                name="name"
+              />
+              <span>About Us</span>
+              <input
+                type="text"
+                value="{{this.userData?.about}}"
+                #about
+                name="about"
+              />
+
+              <ul class="profile-info-list">
+                <a href="" class="profile-info-list-item"
+                  ><i class="mdi mdi-eye"></i>LogOut</a
+                >
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <hr />
+            <p class="card-description">User Information</p>
+            <ul class="about">
+              <li class="about-items">
+                <i class="mdi mdi-account icon-sm"></i>
+                <span class="about-item-name">Owner:</span>
+                <input
+                  type="text"
+                  value="{{this.userData?.owner}}"
+                  #owner
+                  name="owner"
+                />
+              </li>
+              <li class="about-items">
+                <i class="mdi mdi-trophy-variant-outline icon-sm"></i>
+                <span class="about-item-name">Our Field:</span>
+                <input
+                  type="text"
+                  value="{{this.userData?.field}}"
+                  #field
+                  name="field"
+                />
+              </li>
+              <li class="about-items">
+                <i class="mdi mdi-trophy-variant-outline icon-sm"></i>
+                <span class="about-item-name">Our Number Of Employees:</span>
+                <input
+                  type="text"
+                  value="{{this.userData?.numberOfEmployees}}"
+                  #numberOfEmployees
+                  name="numberOfEmployees"
+                />
+              </li>
+            </ul>
+            <p class="card-description">Contact Information</p>
+            <ul class="about">
+              <li class="about-items">
+                <i class="mdi mdi-map-marker icon-sm"></i>
+                <span class="about-item-name">Address:</span>
+                <input
+                  type="text"
+                  value="{{this.userData?.location}}"
+                  #location
+                  name="location"
+                />
+              </li>
+              <li class="about-items">
+                <i class="mdi mdi-email-outline icon-sm"></i>
+                <span class="about-item-name">Email:</span>
+                <input
+                  type="text"
+                  value="{{this.userData?.email}}"
+                  #email
+                  name="email"
+                />
+              </li>
+              <li class="about-items">
+                <i class="mdi mdi-web icon-sm"></i>
+                <span class="about-item-name">Site:</span>
+                <input
+                  type="text"
+                  value="{{this.userData?.website}}"
+                  #website
+                  name="website"
+                />
+              </li>
+
+              <a class="about-item-edit left">
+                <i class="material-icons" (click)="feed()">Create Posts</i>
+              </a>
+
+              <a class="about-item-edit left">
+                <i class="material-icons" (click)="backToProfile()">
+                  Edit Profile
+                </i>
+              </a>
+              <a class="about-item-edit left">
+                <button
+                  class="material-icons"
+                  (click)="submitChange([name.value ,about.value, owner.value, field.value, numberOfEmployees.value , location.value ,email.value ,website.value], [name.name ,about.name , owner.name, field.name, numberOfEmployees.name , location.name, email.name, website.name], this.userToken)"
+                >
+                  submit
+                </button>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

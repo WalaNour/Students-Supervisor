@@ -1,0 +1,55 @@
+.split {
+  height: 90%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  margin-top: 10;
+  overflow-x: hidden;
+  padding: 5;
+  border: 1px solid #ccc;
+}
+/* Control the left side */
+.left {
+  left: 10%;
+  margin: 5%;
+  background-image: url("https://miro.medium.com/max/3840/1*V_Emhv72j-0Z4A8T03RKtQ.jpeg");
+  background-position: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.466);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+}
+
+.centered > h3 {
+  color: white;
+}
+/* Control the right side */
+.right {
+  right: 10%;
+  margin: 5%;
+  background-image: url("https://www.chartattack.com/wp-content/uploads/2019/12/Interview-3.jpg");
+  background-position: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.466);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.w3-card {
+  background-color: white;
+  box-shadow: turquoise(0px, 2px, 5px, 0px);
+  opacity: 0.89;
+}
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}

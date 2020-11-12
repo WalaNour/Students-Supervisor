@@ -1,0 +1,315 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img
+    src="../../assets/logo.png"
+    (click)="profile()"
+    width="80"
+    height="50"
+    alt=""
+    loading="lazy"
+    style="cursor: pointer;"
+  />
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" (click)="feed()">Feed </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" (click)="profile()"
+          >Profile <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a (click)="takeMeToReports()" class="nav-link">send Report</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="logOutStudent()"><i class="fas fa-sign-out-alt"></i> </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
+<div id="main">
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body profile">
+              <img class="cover" src="../../assets/cover.jpg" />
+              <div class="d-flex flex-column align-items-center text-center">
+                <img
+                  src="{{ this.userData?.profilePic }}"
+                  class="avatar"
+                  width="200"
+                />
+                <div class="personal-data">
+                  <h4>
+                    {{ this.userData?.firstname + " " + this.userData?.lastname
+                    }}
+                  </h4>
+                  <input
+                    type="submit"
+                    (click)="update([dreamJob.value, address.value, driving.value, educationlvl.value, feald.value, socialLink.value, languages.value, skills.value, hobbies.value ,city.value] ,[dreamJob.name, address.name, driving.name, educationlvl.name,feald.name, socialLink.name, languages.name, skills.name, hobbies.name ,city.name] , this.user)"
+                    class="btn btn-outline-primary"
+                    value="Update"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-3">
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+              >
+                <h6 class="mb-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-facebook mr-2 icon-inline text-primary"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    ></path></svg
+                  >Facebook
+                </h6>
+                <input
+                  type="text"
+                  #socialLink
+                  value="{{ this.userData?.socialLink }}"
+                  name="socialLink"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">First Name :</h6>
+                </div>
+                <div class="md-form">
+                  <input
+                    type="text"
+                    #firstname
+                    value="{{ this.userData?.firstname }}"
+                    name="lastname"
+                  />
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Last Name :</h6>
+                </div>
+                <input
+                  type="text"
+                  value="{{ this.userData?.lastname }}"
+                  #lastname
+                  name="lastname"
+                />
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email :</h6>
+                </div>
+                <input
+                  type="text"
+                  #email
+                  name="email"
+                  value="{{ this.userData?.email }}"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row gutters-sm">
+            <div class="col-sm-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">level:</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #educationlvl
+                      name="educationlvl"
+                      value="{{ this.userData?.educationlvl }}"
+                    />
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">field :</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #feald
+                      name="feald"
+                      value="{{ this.userData?.feald }}"
+                    />
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">language:</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #languages
+                      name="languages"
+                      value="{{ this.userData?.languages }}"
+                    />
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">hobbies :</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #hobbies
+                      name="hobbies"
+                      value="{{ this.userData?.hobbies }}"
+                    />
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">dream-Job :</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #dreamJob
+                      name="dreamJob"
+                      value="{{ this.userData?.dreamJob }}"
+                    />
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">skills :</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #skills
+                      name="skills"
+                      value="{{ this.userData?.skills }}"
+                    />
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">driving liscence :</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #driving
+                      name="driving"
+                      value="{{ this.userData?.driving }}"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">city :</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #city
+                      name="city"
+                      value="{{ this.userData?.city }}"
+                    />
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">country :</h6>
+                    </div>
+                    <input
+                      type="text"
+                      #country
+                      name="country"
+                      value="{{ this.userData?.country }}"
+                    />
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">Address :</h6>
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        value="address"
+                        #address
+                        name="{{ this.userData?.address }}"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">nationality :</h6>
+                    </div>
+                    <!-- <input
+                    type="text"
+                    #nationality
+                    name="nationality"
+                    value="{{ this.userData?.nationality }}"
+                  /> -->
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">date of birth :</h6>
+                    </div>
+                    <!-- <input
+                    type="text"
+                    #dateOfBirth
+                    name="dateOfBirth"
+                    value="{{ this.userData?.dateOfBirth }}"
+                  /> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

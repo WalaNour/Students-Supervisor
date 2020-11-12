@@ -1,0 +1,119 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Admin</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <a (click)="verf()" aria-expanded="false">Verify User</a>
+      </li>
+      <li>
+        <a (click)="ban()" aria-expanded="false">Ban User</a>
+      </li>
+      <li>
+        <a (click)="member()" aria-expanded="false">MemberShip</a>
+      </li>
+      <li>
+        <a (click)="adTree()" aria-expanded="false">Add Trees</a>
+      </li>
+      <li>
+        <a (click)="coach()" aria-expanded="false">Add Coaches</a>
+      </li>
+      <li class="active">
+        <a (click)="feedback()" aria-expanded="false">Users Feedbacks</a>
+      </li>
+      <li>
+        <a (click)="report()" aria-expanded="false">Users Reports</a>
+      </li>
+      <li>
+        <a (click)="post()" aria-expanded="false">Posts</a>
+      </li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a (click)="goback()" class="download">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Page Content Holder -->
+  <div id="content">
+    <div class="container">
+      <nav
+        class="navbar navbar-àexpand-lg navbar-light bg-light"
+        style="margin-left: 10%; margin-right: -63%;"
+      >
+        <a>Feedbacks</a>
+        <button
+          class="btn btn-danger"
+          (click)="deleteAll()"
+          style="margin-left: 20%;"
+        >
+          delete All
+        </button>
+      </nav>
+    </div>
+    <div class="line">
+      <div class="all" style="margin-left: 231px;">
+        <table class="table" style="width: 147%;">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">user name</th>
+              <th scope="col">type of user</th>
+              <th scope="col">message</th>
+              <th scope="col">
+                delete
+              </th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let element of reports">
+            <tr>
+              <th>
+                {{ this.element?.username }}
+              </th>
+              <th>
+                {{ this.element?.typeOfUser }}
+              </th>
+              <th>
+                {{ this.element?.message }}
+              </th>
+              <th (click)="deleteReport(this.element?.id)" class="btn">
+                delete
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="all" style="margin-left: 231px;">
+        <table class="table" style="width: 147%;">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">user name</th>
+              <th scope="col">type of user</th>
+              <th scope="col">message</th>
+              <th scope="col">
+                delete
+              </th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let element of reports">
+            <tr>
+              <th>
+                {{ this.element?.username }}
+              </th>
+              <th>
+                {{ this.element?.typeOfUser }}
+              </th>
+              <th>
+                {{ this.element?.message }}
+              </th>
+              <th (click)="deleteReport(this.element?.id)" class="btn">
+                delete
+              </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

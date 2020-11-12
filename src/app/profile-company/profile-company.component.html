@@ -1,0 +1,142 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" (click)="backToProfile()">Profile</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="studentApply()"
+          >Notifications <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="ownPosts()">Posts</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Search..."
+        name="search"
+        #search
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        (click)="searchProfil(search.value)"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
+<!--profile-->
+
+<div class="main-panel">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 grid-margin stretch-card">
+        <div class="card">
+          <div class="profile-card">
+            <div class="profile-header">
+              <div class="cover-image">
+                <img src="{{ this.userData?.logo }}" class="img img-fluid" />
+              </div>
+            </div>
+
+            <div class="profile-content">
+              <div class="profile-name">{{this.userData?.name}}</div>
+              <span>About Us</span>
+              <p class="profile-description">
+                {{this.userData?.about}}
+              </p>
+              <ul class="profile-info-list">
+                <a href="" class="profile-info-list-item"
+                  ><i class="mdi mdi-eye"></i>LogOut</a
+                >
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <hr />
+            <p class="card-description">User Information</p>
+            <ul class="about">
+              <li class="about-items">
+                <i class="mdi mdi-account icon-sm"></i>
+                <span class="about-item-name">Owner:</span>
+                <span class="about-item-detail"
+                  >{{ this.userData?.owner }}</span
+                >
+              </li>
+              <li class="about-items">
+                <i class="mdi mdi-trophy-variant-outline icon-sm"></i
+                ><span class="about-item-name">Our Field:</span
+                ><span class="about-item-detail">
+                  {{ this.userData?.field }}
+                </span>
+              </li>
+              <li class="about-items">
+                <i class="mdi mdi-trophy-variant-outline icon-sm"></i
+                ><span class="about-item-name">Our Number Of Employees:</span
+                ><span class="about-item-detail">
+                  {{ this.userData?.numberOfEmployees }}
+                </span>
+              </li>
+            </ul>
+            <p class="card-description">Contact Information</p>
+            <ul class="about">
+              <li class="about-items">
+                <i class="mdi mdi-map-marker icon-sm"></i>
+                <span class="about-item-name">Address:</span>
+                <span class="about-item-detail">
+                  {{ this.userData?.location }}
+                </span>
+              </li>
+              <li class="about-items">
+                <i class="mdi mdi-email-outline icon-sm"></i>
+                <span class="about-item-name">Email:</span>
+                <span class="about-item-detail"
+                  ><a href="">{{ this.userData?.email }}</a></span
+                >
+              </li>
+              <li class="about-items">
+                <i class="mdi mdi-web icon-sm"></i>
+                <span class="about-item-name">Site:</span>
+                <span class="about-item-detail">
+                  <a href="google.com">{{ this.userData?.website }}</a>
+                </span>
+              </li>
+
+              <a class="about-item-edit left">
+                <i class="material-icons" (click)="feed()">Create Posts</i>
+              </a>
+
+              <a class="about-item-edit left">
+                <i class="material-icons" (click)="updateCompany()">
+                  Edit Profile
+                </i>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

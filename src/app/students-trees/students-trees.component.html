@@ -1,0 +1,44 @@
+<div>
+    <form>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Example select</label>
+          <select #tree class="form-control" id="exampleFormControlSelect1">
+            <option *ngFor="let element of trees">
+              {{ this.element?.job }}
+            </option>
+          </select>
+        </div>
+        <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="getTree(tree.value)"
+      >
+        Submit
+      </button>
+      </form>
+</div>
+<div *ngFor = "let element of paths">
+    <h2>{{this.element?.name}}</h2>
+    <h4>{{this.element?.stepOne}}</h4>
+    <p><details>{{this.element?.descOne}}</details></p>
+    <h4>{{this.element?.stepTwo}}</h4>
+    <p><details>{{this.element?.descTwo}}</details></p>
+    <h4>{{this.element?.stepThree}}</h4>
+    <p><details>{{this.element?.descThree}}</details></p>
+    <h4>{{this.element?.stepFour}}</h4>
+    <p><details>{{this.element?.descFour}}</details></p>
+    <h4>{{this.element?.stepFive}}</h4>
+    <p><details>{{this.element?.descFive}}</details></p>
+    <h4>{{this.element?.stepSix}}</h4>
+    <p><details>{{this.element?.descSix}}</details></p>
+    <h4>{{this.element?.stepSeven}}</h4>
+    <p><details>{{this.element?.descSeven}}</details></p>
+    <h4>{{this.element?.stepEight}}</h4>
+    <p><details>{{this.element?.descEight}}</details></p>
+    <h4>{{this.element?.stepNine}}</h4>
+    <p><details>{{this.element?.descNine}}</details></p>
+    <h4>{{this.element?.stepTen}}</h4>
+    <p><details>{{this.element?.descTen}}</details></p>
+</div>
+
+

@@ -1,0 +1,406 @@
+<div class="all" style="background-color: coral;">
+  <div id="first">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input
+          #bigtitle
+          type="text"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="electrical engeneer"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Title</label>
+        <input
+          #number
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="+216 ** *** ***"
+        />
+      </div>
+      <button
+        (click)="tosecond(bigtitle.value , number.value)"
+        class="btn btn-primary"
+      >
+        next
+      </button>
+    </form>
+  </div>
+  <div id="second">
+    <h3>EDUCATION part 1</h3>
+    <form>
+      <div class="form-group">
+        <select #from1 class="form-control" id="exampleFormControlSelect1">
+          <option>from</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select #to1 class="form-control" id="exampleFormControlSelect1">
+          <option>to</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">title</label>
+        <input
+          #title1
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="bac tech"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">description</label>
+        <input
+          #desc1
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="admit trés bien"
+        />
+      </div>
+    </form>
+    <button
+      (click)="tothird(from1.value , to1.value , title1.value , desc1.value)"
+      class="btn btn-primary"
+    >
+      next
+    </button>
+  </div>
+  <div id="third">
+    *
+    <h3>EDUCATION part 2</h3>
+    <form>
+      <div class="form-group">
+        <select #from2 class="form-control" id="exampleFormControlSelect1">
+          <option>from</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select #to2 class="form-control" id="exampleFormControlSelect1">
+          <option>to</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">title</label>
+        <input
+          #title2
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="bac tech"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">description</label>
+        <input
+          #desc2
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="admit trés bien"
+        />
+      </div>
+    </form>
+    <button
+      (click)="toforth(from2.value , to2.value , title2.value , desc2.value)"
+      class="btn btn-primary"
+    >
+      next
+    </button>
+  </div>
+  <div id="forth">
+    <h3>EDUCATION part 3</h3>
+    <form>
+      <div class="form-group">
+        <select #from3 class="form-control" id="exampleFormControlSelect1">
+          <option>from</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select #to3 class="form-control" id="exampleFormControlSelect1">
+          <option>to</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">title</label>
+        <input
+          #title3
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="bac tech"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">description</label>
+        <input
+          #desc3
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="admit trés bien"
+        />
+      </div>
+    </form>
+    <button
+      (click)="tofifth(from3.value , to3.value , title3.value , desc3.value)"
+      class="btn btn-primary"
+    >
+      next
+    </button>
+  </div>
+  <!-- EXPERRIENCE  -->
+  <div id="fifth">
+    <h3>Experrience part 1</h3>
+    <form>
+      <div class="form-group">
+        <select #from1e class="form-control" id="exampleFormControlSelect1">
+          <option>from</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select #to1e class="form-control" id="exampleFormControlSelect1">
+          <option>to</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">title</label>
+        <input
+          #title1e
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="rbk hir"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">description</label>
+        <input
+          #desc1e
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="technical improvment"
+        />
+      </div>
+    </form>
+    <button
+      (click)="tosix(from1e.value , to1e.value , title1e.value , desc1e.value)"
+      class="btn btn-primary"
+    >
+      next
+    </button>
+  </div>
+  <div id="six">
+    <h3>Experrience part 2</h3>
+    <form>
+      <div class="form-group">
+        <select #from2e class="form-control" id="exampleFormControlSelect1">
+          <option>from</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select #to2e class="form-control" id="exampleFormControlSelect1">
+          <option>to</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">title</label>
+        <input
+          #title2e
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="bac tech"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">description</label>
+        <input
+          #desc2e
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="admit trés bien"
+        />
+      </div>
+    </form>
+    <button
+      (click)="toseven(from2e.value , to2e.value , title2e.value , desc2e.value)"
+      class="btn btn-primary"
+    >
+      next
+    </button>
+  </div>
+  <div id="seven">
+    <h3>Experrience part 3</h3>
+    <form>
+      <div class="form-group">
+        <select #from3e class="form-control" id="exampleFormControlSelect1">
+          <option>from</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <select #to3e class="form-control" id="exampleFormControlSelect1">
+          <option>to</option>
+          <option>2015</option>
+          <option>2016</option>
+          <option>2017</option>
+          <option>2018</option>
+          <option>2019</option>
+          <option>present</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">title</label>
+        <input
+          #title3e
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="bac tech"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">description</label>
+        <input
+          #desc3e
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="admit trés bien"
+        />
+      </div>
+    </form>
+    <button
+      (click)="toeight(from3e.value , to3e.value , title3e.value , desc3e.value)"
+      class="btn btn-primary"
+    >
+      next
+    </button>
+  </div>
+  <!-- SKILLS -->
+  <div id="eight">
+    <h3>Skills</h3>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">skill1</label>
+        <input
+          #skill1
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="patient"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">skill2</label>
+        <input
+          #skill2
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="creative"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">skill3</label>
+        <input
+          #skill3
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="creative"
+        />
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">skill4</label>
+        <input
+          #skill4
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          placeholder="creative"
+        />
+      </div>
+    </form>
+    <button
+      (click)="end(skill1.value , skill2.value , skill3.value , skill4.value)"
+      class="btn btn-primary"
+    >
+      Download your profile
+    </button>
+  </div>
+</div>

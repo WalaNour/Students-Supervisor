@@ -1,0 +1,136 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Admin</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <a (click)="verf()" aria-expanded="false">Verify User</a>
+      </li>
+      <li>
+        <a (click)="ban()" aria-expanded="false">Ban User</a>
+      </li>
+      <li class="active">
+        <a (click)="member()" aria-expanded="false">MemberShip</a>
+      </li>
+      <li>
+        <a (click)="adTree()" aria-expanded="false">Add Trees</a>
+      </li>
+      <li>
+        <a (click)="coach()" aria-expanded="false">Add Coaches</a>
+      </li>
+      <li>
+        <a (click)="feedback()" aria-expanded="false">Users Feedbacks</a>
+      </li>
+      <li>
+        <a (click)="report()" aria-expanded="false">Users Reports</a>
+      </li>
+      <li>
+        <a (click)="post()" aria-expanded="false">Posts</a>
+      </li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a (click)="goback()" class="download">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Page Content Holder -->
+  <div id="content">
+    <div class="container">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+        style="margin-left: 10%; margin-right: -157%;"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          role="button"
+          data-toggle="dropdown"
+          style="color: black;"
+        >
+          Update The Membership
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" (click)="silver()" style="color: black;"
+            >Silver Member
+          </a>
+          <a class="dropdown-item" (click)="gold()" style="color: black;">
+            Gold Member</a
+          >
+          <a class="dropdown-item" (click)="plat()" style="color: black;">
+            Plat Member</a
+          >
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="all()" style="color: black;"
+            >Update All</a
+          >
+        </div>
+      </nav>
+    </div>
+    <div class="line">
+      <div class="card card-cascade narrower left">
+        <!--Card image-->
+        <div
+          class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center"
+        >
+          <a class="white-text mx-3"></a>
+        </div>
+        <!--/Card image-->
+        <div class="px-4">
+          <div class="table-wrapper">
+            <!--Table-->
+            <table class="table table-hover mb-0">
+              <!--Table head-->
+              <thead>
+                <tr>
+                  <th class="th-lg">
+                    <a>
+                      Training Center Name
+                      <i class="fas fa-sort ml-1"></i>
+                    </a>
+                  </th>
+                  <th class="th-lg">
+                    <a>Gold </a>
+                  </th>
+                  <th class="th-lg">
+                    <a>Plat </a>
+                  </th>
+                </tr>
+              </thead>
+              <!--Table head-->
+              <!--Table body-->
+              <tbody *ngFor="let element of trainingCenters">
+                <tr>
+                  <td>
+                    {{ this.element?.name }} is {{ this.element?.memberShip }}
+                  </td>
+                  <th>
+                    <button
+                      type="button"
+                      class="btn btn-warning"
+                      (click)="toGold(this.element?.name)"
+                    >
+                      To Gold
+                    </button>
+                  </th>
+                  <th>
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      (click)="toPlat(this.element?.name)"
+                    >
+                      To Plat
+                    </button>
+                  </th>
+                </tr>
+              </tbody>
+              <!--Table body-->
+            </table>
+            <!--Table-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

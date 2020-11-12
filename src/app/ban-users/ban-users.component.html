@@ -1,0 +1,196 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Admin</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <a (click)="verf()" aria-expanded="false">Verify User</a>
+      </li>
+      <li class="active">
+        <a (click)="ban()" aria-expanded="false">Ban User</a>
+      </li>
+      <li>
+        <a (click)="member()" aria-expanded="false">MemberShip</a>
+      </li>
+      <li>
+        <a (click)="adTree()" aria-expanded="false">Add Trees</a>
+      </li>
+      <li>
+        <a (click)="coach()" aria-expanded="false">Add Coaches</a>
+      </li>
+      <li>
+        <a (click)="feedback()" aria-expanded="false">Users Feedbacks</a>
+      </li>
+      <li>
+        <a (click)="report()" aria-expanded="false">Users Reports</a>
+      </li>
+      <li>
+        <a (click)="post()" aria-expanded="false">Posts</a>
+      </li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a (click)="goback()" class="download">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Page Content Holder -->
+  <div id="content">
+    <div class="container">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+        style="margin-left: 10%; margin-right: -45%;"
+      >
+        <a>Ban User</a>
+      </nav>
+    </div>
+    <div class="line">
+      <!-- Table with panel -->
+      <div class="card card-cascade narrower left">
+        <!--Card image-->
+        <div
+          class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center"
+        >
+          <a class="white-text mx-3">Student Verification</a>
+        </div>
+        <!--/Card image-->
+        <div class="px-4">
+          <div class="table-wrapper">
+            <!--Table-->
+            <table class="table table-hover mb-0">
+              <!--Table head-->
+              <thead>
+                <tr>
+                  <th class="th-lg">
+                    <a> Name </a>
+                  </th>
+                  <th class="th-lg">
+                    <a> </a>
+                  </th>
+                </tr>
+              </thead>
+              <!--Table head-->
+              <!--Table body-->
+              <tbody *ngFor="let element of students">
+                <tr>
+                  <td>{{ this.element?.username }}</td>
+                  <th>
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      (click)="banStudent(this.element?.id)"
+                      style="margin-right: 5%;"
+                    >
+                      Ban
+                    </button>
+                  </th>
+                </tr>
+              </tbody>
+              <!--Table body-->
+            </table>
+            <!--Table-->
+          </div>
+        </div>
+      </div>
+      <!-- Table with panel -->
+      <!-- Table with panel -->
+      <div class="card card-cascade narrower center">
+        <!--Card image-->
+        <div
+          class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center"
+        >
+          <a href="" class="white-text mx-3">Company Verification</a>
+        </div>
+        <!--/Card image-->
+        <div class="px-4">
+          <div class="table-wrapper">
+            <!--Table-->
+            <table class="table table-hover mb-0">
+              <!--Table head-->
+              <thead>
+                <tr>
+                  <th class="th-lg">
+                    <a> Name </a>
+                  </th>
+                  <th class="th-lg">
+                    <a> </a>
+                  </th>
+                </tr>
+              </thead>
+              <!--Table head-->
+              <!--Table body-->
+              <tbody *ngFor="let element of companies">
+                <tr>
+                  <td>{{ this.element?.name }}</td>
+                  <th>
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      (click)="banCompany(this.element?.id)"
+                      style="margin-right: 5%;"
+                    >
+                      Ban
+                    </button>
+                  </th>
+                </tr>
+              </tbody>
+              <!--Table body-->
+            </table>
+            <!--Table-->
+          </div>
+        </div>
+      </div>
+      <!-- Table with panel -->
+      <!-- Table with panel -->
+      <div class="card card-cascade narrower right">
+        <!--Card image-->
+        <div
+          class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center"
+        >
+          <a href="" class="white-text mx-3">Training Center Verification</a>
+        </div>
+        <!--/Card image-->
+        <div class="px-4">
+          <div class="table-wrapper">
+            <!--Table-->
+            <table class="table table-hover mb-0">
+              <!--Table head-->
+              <thead>
+                <tr>
+                  <th class="th-lg">
+                    <a> Name </a>
+                  </th>
+                  <th class="th-lg">
+                    <a> </a>
+                  </th>
+                </tr>
+              </thead>
+              <!--Table head-->
+              <!--Table body-->
+              <tbody *ngFor="let element of trainingCenters">
+                <tr>
+                  <td>{{ this.element?.name }}</td>
+                  <th>
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      (click)="banCenter(this.element?.id)"
+                      style="margin-right: 5%;"
+                    >
+                      Ban
+                    </button>
+                  </th>
+                </tr>
+              </tbody>
+              <!--Table body-->
+            </table>
+            <!--Table-->
+          </div>
+        </div>
+      </div>
+      <!-- Table with panel -->
+    </div>
+  </div>
+</div>

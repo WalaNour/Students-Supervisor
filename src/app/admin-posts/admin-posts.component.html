@@ -1,0 +1,75 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Admin</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <a (click)="verf()" aria-expanded="false">Verify User</a>
+      </li>
+      <li>
+        <a (click)="ban()" aria-expanded="false">Ban User</a>
+      </li>
+      <li>
+        <a (click)="member()" aria-expanded="false">MemberShip</a>
+      </li>
+      <li>
+        <a (click)="adTree()" aria-expanded="false">Add Trees</a>
+      </li>
+      <li>
+        <a (click)="coach()" aria-expanded="false">Add Coaches</a>
+      </li>
+      <li>
+        <a (click)="feedback()" aria-expanded="false">Users Feedbacks</a>
+      </li>
+      <li>
+        <a (click)="report()" aria-expanded="false">Users Reports</a>
+      </li>
+      <li class="active">
+        <a (click)="post()" aria-expanded="false">Posts</a>
+      </li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a (click)="goback()" class="download">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Page Content Holder -->
+  <div id="content">
+    <div class="container">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+        style="margin-left: 12%; margin-right: -19%;"
+      >
+        <a>Posts</a>
+      </nav>
+    </div>
+    <div class="line">
+      <div
+        class="companies-container"
+        style="margin-left: -1%; text-align: center;"
+      >
+        <div
+          class="card"
+          style="width: 18rem; margin-bottom: 4%;"
+          *ngFor="let element of posts"
+        >
+          <img
+            class="card-img-top"
+            src="{{ this.element?.image }}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ this.element?.title }}</h5>
+            <p class="card-text">{{ this.element?.description }}</p>
+            <a class="btn btn-primary" (click)="seeMore(this.element)"
+              >Delete</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

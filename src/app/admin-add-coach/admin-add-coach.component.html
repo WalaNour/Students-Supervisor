@@ -1,0 +1,147 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Admin</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <a (click)="verf()" aria-expanded="false">Verify User</a>
+      </li>
+      <li>
+        <a (click)="ban()" aria-expanded="false">Ban User</a>
+      </li>
+      <li>
+        <a (click)="member()" aria-expanded="false">MemberShip</a>
+      </li>
+      <li>
+        <a (click)="adTree()" aria-expanded="false">Add Trees</a>
+      </li>
+      <li class="active">
+        <a (click)="coach()" aria-expanded="false">Add Coaches</a>
+      </li>
+      <li>
+        <a (click)="feedback()" aria-expanded="false">Users Feedbacks</a>
+      </li>
+      <li>
+        <a (click)="report()" aria-expanded="false">Users Reports</a>
+      </li>
+      <li>
+        <a (click)="post()" aria-expanded="false">Posts</a>
+      </li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a (click)="goback()" class="download">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Page Content Holder -->
+  <div id="content">
+    <div class="container">
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light"
+        style="margin-left: 25%; margin-right: -203%;"
+      >
+        <a>Add Coaches</a>
+      </nav>
+    </div>
+    <div class="line">
+      <form
+        style="
+          margin-left: 69%;
+          width: 150%;
+          border: 2px solid rgba(0, 0, 0, 0.125);
+          margin-top: 20%;
+          padding: 8%;
+        "
+      >
+        <div class="form-group">
+          <label for="exampleInputEmail1"></label>
+          <input
+            #fullName
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="FullName"
+          />
+        </div>
+        <div class="form-group">
+          <label></label>
+          <input #image type="file" />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1"></label>
+          <input
+            #email
+            type="email"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Email address"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1"></label>
+          <input
+            #diplome
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Diploma"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1"></label>
+          <input
+            #experience
+            type="text"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Experience"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1"></label>
+          <textarea
+            #about
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="About"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1"></label>
+          <input
+            #number
+            type="text"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Contact"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-info"
+          (click)="
+            addCoach(
+              fullName.value,
+              image.value,
+              email.value,
+              diplome.value,
+              experience.value,
+              about.value,
+              number.value
+            )
+          "
+          style="width: 50%; margin-left: 30%; background: #7e7fa9c2;"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

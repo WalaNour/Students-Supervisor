@@ -1,0 +1,205 @@
+<div id="main">
+  <div class="container">
+    <div class="main-body">
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body profile">
+              <img class="cover" src="../../assets/cover.jpg" />
+              <div class="d-flex flex-column align-items-center text-center">
+                <img
+                  src="{{ this.userData?.profilePic }}"
+                  alt="Admin"
+                  class="avatar"
+                  width="200"
+                />
+                <div class="personal-data">
+                  <h4>
+                    {{ this.userData?.firstname + " " + this.userData?.lastname
+                    }}
+                  </h4>
+
+                  <button class="btn btn-outline-primary">
+                    edit profile
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-3">
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+              >
+                <h6 class="mb-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-facebook mr-2 icon-inline text-primary"
+                  >
+                    <path
+                      d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                    ></path></svg
+                  >Facebook
+                </h6>
+                <span class="text-secondary"
+                  >{{ this.userData?.socialLink }}</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">First Name :</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{ this.userData?.firstname }}
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Last Name :</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{ this.userData?.lastname }}
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Email :</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  {{ this.userData?.email }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row gutters-sm">
+            <div class="col-sm-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">level:</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.educationlvl }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">field :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.field }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">language:</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.languages }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">hobbies :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.hobbies }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">dream-Job :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.dreamJob }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">skills :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.skills }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">driving liscence :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.driving }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 mb-3">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">city :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.city }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">country :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.country }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">nationality :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.nationality }}
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">date of birth :</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary">
+                      {{ this.userData?.dateOfBirth }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

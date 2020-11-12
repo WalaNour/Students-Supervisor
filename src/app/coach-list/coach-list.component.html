@@ -1,0 +1,13 @@
+<p>coach-list works!</p>
+<div class="card" style="width: 18rem;" *ngFor="let element of coachList">
+  <img src="{{this.element?.image}}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5>{{this.element?.fullName}}</h5>
+    <p class="card-text">{{this.element?.about}}</p>
+    <p class="card-text">{{this.element?.diplome}}</p>
+    <p class="card-text">{{this.element?.experience}}</p>
+    <p class="card-text">{{this.element?.email}}</p>
+    <p class="card-text">{{this.element?.number}}</p>
+  </div>
+</div>
+<button type="button" (click)="profile()" class="btn btn-link">Profile</button>

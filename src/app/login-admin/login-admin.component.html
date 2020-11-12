@@ -1,0 +1,63 @@
+<section class="form-elegant" style="margin-top: 10%;">
+  <!--Form without header-->
+  <div
+    class="card"
+    style="margin-right: 30%; margin-left: 30%; margin-bottom: 5%;"
+  >
+    <div class="card-body mx-4">
+      <!--Header-->
+      <div class="text-center">
+        <h3
+          class="dark-grey-text mb-5"
+          style="color: rgba(61, 100, 206, 0.801);"
+        >
+          <strong>Admin</strong>
+        </h3>
+      </div>
+      <!--Body-->
+      <div class="md-form">
+        <i class="fa fa-user icon"></i>
+        <input
+          type="text"
+          id="Form-email1"
+          class="form-control"
+          placeholder="Username"
+          name="admin"
+          style="text-align: center; margin-bottom: 2%;"
+          #admin
+        />
+        <!-- <label for="Form-email1">Username</label> -->
+      </div>
+      <div class="md-form pb-3">
+        <i class="fa fa-key icon"> </i>
+        <input
+          type="password"
+          id="Form-pass1"
+          class="form-control"
+          placeholder="Password"
+          style="text-align: center; margin-bottom: 3%;"
+          #password
+          name="password"
+        />
+        <!-- <label for="Form-pass1">Your password</label> -->
+      </div>
+      <div class="text-center mb-3">
+        <button
+          type="button"
+          class="btn blue-gradient btn-block btn-rounded z-depth-1a"
+          style="background: rgba(115, 185, 250, 0.973);"
+          (click)="login(admin.value, password.value)"
+        >
+          Sign in
+        </button>
+      </div>
+    </div>
+    <!--Footer-->
+    <div class="modal-footer mx-5 pt-3 mb-1">
+      <p class="font-small grey-text d-flex justify-content-end">
+        <a href="#" class="blue-text ml-1"></a>
+      </p>
+    </div>
+  </div>
+  <!--/Form without header-->
+</section>

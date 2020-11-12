@@ -1,0 +1,318 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <!-- <a class="navbar-brand" (click)="home()">logo</a> -->
+  <img
+    (click)="home()"
+    src="../../assets/logo.png"
+    width="80"
+    height="50"
+    alt=""
+    loading="lazy"
+    style="cursor: pointer;"
+  />
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          >Login</a
+        >
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" (click)="studentl()">As Student</a>
+          <a class="dropdown-item" (click)="companyl()">As Company</a>
+          <a class="dropdown-item" (click)="centerl()">As center</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer;" (click)="aboutUs()"
+          >About Us</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="container">
+  <section
+    style="margin-top: 5%; margin-right: 10%;"
+    class="call-to-action text-white text-center"
+  >
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 style="color: rgb(76, 143, 163);">The Future Of Education</h1>
+          <h2 class="mb-4">
+            We inted to create the best fun and original way to improve the
+            current educational system , if you want do discover more and start
+            building your dreams start now
+          </h2>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-3">
+                <button
+                  style="margin-left: 149%; width: 126%; height: 112%;"
+                  type="submit"
+                  class="btn btn-info"
+                  (click)="studentl()"
+                >
+                  Student Sign up
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="bg-container">
+    <img class="img" src="../../assets/image.png" />
+  </div>
+</div>
+<div
+  class="container"
+  style="
+    margin-top: 250px;
+    text-align: center;
+    background-color: rgb(203 220 239 / 14%);
+  "
+>
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-2"></div>
+    <div class="col-md-auto">
+      <h1 style="margin-top: 3%; color: rgb(76, 143, 163);">
+        Previous Trainings
+      </h1>
+      <h3 style="font-family: 'times new roman';">
+        We inted to create the best fun and original way to improve the current
+        educational system , if you want do discover more and start building
+        your dreams start now
+      </h3>
+    </div>
+    <div class="col col-lg-2"></div>
+  </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-md-auto">
+      <div style="flex-grow: 1;">
+        <div class="container" style="display: flex;">
+          <div style="width: 50%;">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+                margin-top: 3%;
+                margin-left: -20%;
+                margin-bottom: 20%;
+              "
+            >
+              <img src="../../assets/t1.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">UX/UI DESIGN</h5>
+                <p class="card-text">
+                  The UX designer (user eXperience) and the UI designer (user
+                  interface) is a recent development and specialization of the
+                  web designer profession. The first is concerned with the user
+                  experience, the second with the design of the product
+                  interface.If you're interested to learn that technology join
+                  us .
+                </p>
+              </div>
+            </div>
+          </div>
+          <div style="flex-grow: 1;">
+            <div
+              class="card"
+              style="
+                width: 18rem;
+
+                margin-top: 3%;
+                margin-right: 20%;
+                margin-bottom: 20%;
+              "
+            >
+              <img src="../../assets/t2.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">React Native</h5>
+                <p class="card-text">
+                  React Native combines the best parts of native development
+                  with React, a best-in-class JavaScript library for building
+                  user interfaces.You can use React Native today in your
+                  existing Android and iOS projects or you can create a whole
+                  new app from scratch.So to be master in that technology just
+                  contact us.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-lg-2"></div>
+  </div>
+  <a class="btn btn-info" (click)="centerl()" style="margin-bottom: 3%;"
+    >Training Center Sign Up</a
+  >
+</div>
+<div
+  class="card text-black"
+  style="
+    border-radius: 30px;
+    width: 70%;
+    height: 750px;
+    margin-left: 15%;
+    margin-top: 300px;
+    text-align: center;
+    background-color: rgb(203 220 239 / 14%);
+  "
+>
+  <img src="../../assets/company.png" class="card-img" />
+  <div class="card-img-overlay">
+    <h3 class="card-title" style="margin-top: 40%; color: rgb(76, 143, 163);">
+      Company To Be
+    </h3>
+    <h4 class="card-text">
+      A company profile is an introduction to your business, and aims to tell an
+      audience about your products or services. However, a company profile
+      shouldn't just tell your audience what you sell -- it should also tell
+      viewers why you sell it. A company profile often includes a compelling
+      story about how the company began, as well as the company's vision and
+      values.
+    </h4>
+    <a class="btn btn-info" style="margin-top: 3%;" (click)="companyl()"
+      >Company Sign Up</a
+    >
+  </div>
+</div>
+<div class="container first">
+  <div style="text-align: center;">
+    <h2>Contact Us</h2>
+    <p>Swing by for a cup of coffee, or leave us a message:</p>
+  </div>
+  <div class="row">
+    <div class="column">
+      <img
+        src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        style="width: 100%; height: 111%;"
+      />
+    </div>
+    <div class="column">
+      <form action="/action_page.php">
+        <label for="fname">Name</label>
+        <input
+          type="text"
+          id="fname"
+          name="name"
+          placeholder="Your name.."
+          #username
+        />
+        <label for="country">Type Of User</label>
+        <select id="country" name="country" #typeOfUser>
+          <option value="australia">Student</option>
+          <option value="canada">Company</option>
+          <option value="usa">Trainin Center</option>
+        </select>
+        <label for="subject">Message</label>
+        <textarea
+          id="subject"
+          name="subject"
+          #message
+          placeholder="Write something.."
+          style="height: 170px;"
+        ></textarea>
+        <input
+          type="submit"
+          value="Submit"
+          (click)="submitForm(username.value, typeOfUser.value, message.value)"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+<footer class="new_footer_area bg_color">
+  <div class="new_footer_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div
+            class="f_widget company_widget wow fadeInLeft"
+            data-wow-delay="0.2s"
+            style="
+              visibility: visible;
+              animation-delay: 0.2s;
+              animation-name: fadeInLeft;
+            "
+          >
+            <form
+              action="#"
+              class="f_subscribe_two mailchimp"
+              method="post"
+              novalidate="true"
+              _lpchecked="1"
+            >
+              <p class="mchimp-errmessage" style="display: none;"></p>
+              <p class="mchimp-sucmessage" style="display: none;"></p>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div
+            class="f_widget about-widget pl_70 wow fadeInLeft"
+            data-wow-delay="0.4s"
+            style="
+              visibility: visible;
+              animation-delay: 0.4s;
+              animation-name: fadeInLeft;
+            "
+          ></div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div
+            class="f_widget about-widget pl_70 wow fadeInLeft"
+            data-wow-delay="0.6s"
+            style="
+              visibility: visible;
+              animation-delay: 0.6s;
+              animation-name: fadeInLeft;
+            "
+          ></div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div
+            class="f_widget social-widget pl_70 wow fadeInLeft"
+            data-wow-delay="0.8s"
+            style="
+              visibility: visible;
+              animation-delay: 0.8s;
+              animation-name: fadeInLeft;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bg">
+      <div class="footer_bg_one"></div>
+      <div class="footer_bg_two"></div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 col-sm-7">
+          <p class="mb-0 f_400">
+            © cakecounter Inc.. 2019 All rights reserved.
+          </p>
+        </div>
+        <div class="col-lg-6 col-sm-5 text-right">
+          <p>
+            Made with <i class="icon_heart"></i> in <a href="#">CakeCounter</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,102 @@
+<div style="width: 100%;">
+  <div style="width: 40%; height: 700px; float: left;">
+    <img src="../../assets/under1.png" width="100%" height="700px" />
+  </div>
+  <div
+    style="
+      width: 30%;
+      margin-left: 54%;
+      height: 700px;
+      margin-right: 6%;
+      text-align: center;
+    "
+  >
+    <h1 style="color: rgb(94, 148, 230);">Welcome To Whah</h1>
+    <p style="color: rgb(185, 185, 185);">
+      whah is a platform that help student from all the ages to discover new
+      technology's and provide them with courses certified by companies in
+      Tunisia
+    </p>
+    <form style="margin-top: 100px;">
+      <input type="text" id="fname" name="fname" #name placeholder="Usename" />
+      <br />
+      <br />
+      <input
+        type="password"
+        id="lname"
+        name="lname"
+        placeholder="Password"
+        #password
+      />
+      <button
+        type="button"
+        (click)="loginTC(name, password)"
+        class="btn btn-outline-secondary"
+        style="width: auto;"
+      >
+        Login
+      </button>
+    </form>
+    <h3>Or</h3>
+    <p>
+      Dont You Have An Account ?
+      <a (click)="sign()" style="color: orange; cursor: pointer;">Sign Up</a>
+    </p>
+    <div id="id01" class="modal">
+      <form
+        style="width: 50%;"
+        class="modal-content animate"
+        action="/action_page.php"
+        method="post"
+      >
+        <div class="imgcontainer">
+          <span
+            onclick="document.getElementById('id01').style.display='none'"
+            class="close"
+            title="Close Modal"
+            >&times;</span
+          >
+          <img src="../../assets/avatar3.png" alt="Avatar" class="avatar" />
+        </div>
+        <div class="container">
+          
+          <input
+            type="text"
+            placeholder="Enter Username"
+            name="namee"
+            #namee
+            required
+            style="width: 70%;"
+          />
+         
+          <input type="text" placeholder="Enter Username" name="email" #email style="width: 70%;"/>
+         
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="passworde"
+            #passworde
+            required
+            style="width: 70%;"
+          /><br/>
+          <button
+            type="submit"
+            class="btn btn-success"
+            (click)="addTC(namee.value,passworde.value)"
+            style="width: 30%;"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+      var modal = document.getElementById("id01");
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </div>
+</div>

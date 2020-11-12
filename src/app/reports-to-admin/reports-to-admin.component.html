@@ -1,0 +1,52 @@
+<div class="container">
+  <h2>Sent Report</h2>
+  <form action="/action_page.php" class="was-validated">
+    <div class="form-group">
+      <label for="uname">Username:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="uname"
+        [formControl]="username"
+      />
+      <div class="valid-feedback">you can keep your name anonymous.</div>
+      <label>
+        type of user:
+        <select [formControl]="typeOfUser" class="form-control">
+          <option class="form-control" default="anynoumos">anonymos</option>
+          <option class="form-control" value="student">Student</option>
+          <option class="form-control" value="company">Company</option>
+          <option class="form-control" value="training center"
+            >Training Center</option
+          >
+        </select>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Report:</label>
+      <input
+        type="password"
+        class="form-control"
+        type="textarea"
+        [formControl]="message"
+        required
+      />
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <!-- <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" required> Im not a robot!!!.
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Check this checkbox to continue.</div>
+      </label>
+    </div> -->
+    <button
+      type="submit"
+      class="btn btn-outline-light text-dark"
+      (click)="submitForm(username.value, typeOfUser.value, message.value)"
+    >
+      Submit
+    </button>
+  </form>
+</div>

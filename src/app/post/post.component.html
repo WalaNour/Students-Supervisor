@@ -1,0 +1,41 @@
+<div id="card">
+  <div class="image left">
+    <img src="{{ this.post?.image }}" />
+  </div>
+  <br />
+  <p></p>
+  <br />
+  <ul class="list-group">
+    <li class="list-group-item">Title of the post: {{ this.post?.title }}</li>
+    <li class="list-group-item">Description: {{ this.post?.description }}</li>
+    <li class="list-group-item">Posted by : {{ this.post?.owner }}</li>
+    <li class="list-group-item">Avrage Salary: {{ this.post?.salary }}</li>
+    <li class="list-group-item">Contact us: {{ this.post?.contact }}</li>
+  </ul>
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea
+        #commen
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      (click)="comment(commen.value)"
+      class="btn btn-primary mb-2"
+    >
+      Comment
+    </button>
+  </form>
+
+  <div class="media" *ngFor="let element of comments">
+    <img src="{{ this.element?.imgUrl }}" class="mr-3" alt="..." />
+    <div class="media-body">
+      <h5 class="mt-0">{{ this.element?.username }}</h5>
+      {{ this.element?.postsText }}
+    </div>
+  </div>
+</div>

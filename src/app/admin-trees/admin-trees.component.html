@@ -1,0 +1,364 @@
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Admin</h3>
+    </div>
+    <ul class="list-unstyled components">
+      <li>
+        <a (click)="verf()" aria-expanded="false">Verify User</a>
+      </li>
+      <li>
+        <a (click)="ban()" aria-expanded="false">Ban User</a>
+      </li>
+      <li>
+        <a (click)="member()" aria-expanded="false">MemberShip</a>
+      </li>
+      <li class="active">
+        <a (click)="adTree()" aria-expanded="false">Add Trees</a>
+      </li>
+      <li>
+        <a (click)="coach()" aria-expanded="false">Add Coaches</a>
+      </li>
+      <li>
+        <a (click)="feedback()" aria-expanded="false">Users Feedbacks</a>
+      </li>
+      <li>
+        <a (click)="report()" aria-expanded="false">Users Reports</a>
+      </li>
+      <li>
+        <a (click)="post()" aria-expanded="false">Posts</a>
+      </li>
+    </ul>
+    <ul class="list-unstyled CTAs">
+      <li>
+        <a (click)="goback()" class="download">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Page Content Holder -->
+  <div id="content">
+    <div class="container">
+      <nav
+        class="navbar navbar-àexpand-lg navbar-light bg-light"
+        style="margin-left: 27%; margin-right: -289%;"
+      >
+        <a>Feedbacks</a>
+      </nav>
+    </div>
+    <div class="line">
+      <div
+        class="right"
+        style="
+          float: right;
+          margin-right: -214%;
+          border: 2px solid rgba(0, 0, 0, 0.125);
+          padding: 20%;
+          width: 112%;
+          text-align: center;
+        "
+      >
+        <div
+          class="modal fade"
+          id="modalTreeForm"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="myModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">
+                  Create New Tree
+                </h4>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                  <label>Job</label>
+                  <input
+                    type="text"
+                    #job
+                    class="form-control validation"
+                    id="exampleFormControlInput1"
+                  />
+                </div>
+                <div class="md-form mb-5">
+                  <label>field</label>
+                  <input
+                    type="text"
+                    #field
+                    class="form-control validation"
+                    id="exampleFormControlInput1"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button
+                  class="btn btn-default"
+                  (click)="treesInfo(job.value, field.value)"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <a
+            class="btn btn-default btn-rounded mb-4"
+            data-toggle="modal"
+            data-target="#modalTreeForm"
+            style="background: rgb(55, 122, 223);"
+            >Create New Tree</a
+          >
+          <div>
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Existant Trees</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option *ngFor="let element of trees">
+                    {{ this.element?.job }}
+                  </option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div
+        class="left"
+        style="
+          float: left;
+          margin-left: 53%;
+          border: 2px solid rgba(0, 0, 0, 0.125);
+          width: 112%;
+          padding: 19%;
+        "
+      >
+        <div
+          class="modal fade"
+          id="modalLoginForm"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="myModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">
+                  Create New Path
+                </h4>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                  <input
+                    #name
+                    type="text"
+                    id="defaultForm-email"
+                    class="form-control validate"
+                  />
+                  <label
+                    data-error="wrong"
+                    data-success="right"
+                    for="defaultForm-email"
+                    placeholder="Path Name"
+                    >Path Name</label
+                  >
+                </div>
+                <div class="md-form mb-5">
+                  <label>step1</label>
+                  <input
+                    #step1
+                    type="text"
+                    class="form-control validate"
+                    id="exampleFormControlInput1"
+                    placeholder="Step 1 .."
+                  />
+                </div>
+                <div class="md-form mb-5">
+                  <label>Description1</label>
+                  <textarea
+                    #description1
+                    class="form-control validate"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    placeholder="Few words .."
+                  ></textarea>
+                </div>
+                <div class="md-form mb-5">
+                  <label>step2</label>
+                  <input
+                    #step2
+                    type="text"
+                    class="form-control validate"
+                    id="exampleFormControlInput1"
+                    placeholder="Step 2 .."
+                  />
+                </div>
+                <div class="md-form mb-5">
+                  <label>Description2</label>
+                  <textarea
+                    #description2
+                    class="form-control validate"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    placeholder="Few words .."
+                  ></textarea>
+                </div>
+                <div class="md-form mb-5">
+                  <label>step3</label>
+                  <input
+                    #step3
+                    type="text"
+                    class="form-control validate"
+                    id="exampleFormControlInput1"
+                    placeholder="Step 3 .."
+                  />
+                </div>
+                <div class="md-form mb-5">
+                  <label>Description3</label>
+                  <textarea
+                    #description3
+                    class="form-control validate"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    placeholder="Few words .."
+                  ></textarea>
+                </div>
+                <div class="md-form mb-5">
+                  <label>step4</label>
+                  <input
+                    #step4
+                    type="text"
+                    class="form-control validate"
+                    id="exampleFormControlInput1"
+                    placeholder="Step 4 .."
+                  />
+                </div>
+                <div class="md-form mb-5">
+                  <label>Description4</label>
+                  <textarea
+                    #description4
+                    class="form-control validate"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    placeholder="Few words .."
+                  ></textarea>
+                </div>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button
+                  class="btn btn-default"
+                  (click)="
+                    pathsInfo(
+                      name.value,
+                      step1.value,
+                      step2.value,
+                      step3.value,
+                      step4.value,
+                      description1.value,
+                      description2.value,
+                      description3.value,
+                      description4.value
+                    )
+                  "
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <a
+            class="btn btn-default btn-rounded mb-4"
+            data-toggle="modal"
+            data-target="#modalLoginForm"
+            style="background: rgb(55, 122, 223);"
+            >Create New Path</a
+          >
+        </div>
+        <div class="form-group" style="text-align: center;">
+          <label for="exampleFormControlSelect1">Existant Paths</label>
+          <select
+            #val1
+            (change)="addp(val1.value)"
+            class="form-control"
+            id="exampleFormControlSelect1"
+          >
+            <option *ngFor="let element of paths">
+              {{ this.element?.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div
+      style="
+        border: 2px solid rgba(0, 0, 0, 0.125);
+        margin-top: 355px;
+        margin-right: -147%;
+        /* padding: 41%; */
+        margin-left: 114%;
+        text-align: center;
+        padding: 10%;
+      "
+    >
+      <div>
+        <div>
+          <div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1" style="text-align: center;"
+                >Existant Paths</label
+              >
+              <select
+                #val1
+                (change)="addp(val1.value)"
+                class="form-control"
+                id="exampleFormControlSelect1"
+              >
+                <option *ngFor="let element of paths">
+                  {{ this.element?.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Existant Trees</label>
+        <select
+          #val
+          (change)="addt(val.value)"
+          class="form-control"
+          id="exampleFormControlSelect1"
+        >
+          <option *ngFor="let element of trees">
+            {{ this.element?.job }}
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="joinInfo()">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

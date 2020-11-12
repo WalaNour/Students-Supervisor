@@ -1,0 +1,94 @@
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">username</label>
+    <input
+      type="text"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="username"
+      #name
+      name="name"
+    />
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Reason of report</label>
+    <select
+      #reason
+      name="reason"
+      class="form-control"
+      id="exampleFormControlSelect2"
+    >
+      <option>select</option>
+      <option>Uncivil, rude or vulgar</option>
+      <option>Incorrect information</option>
+      <option>Over-posting</option>
+      <option>Contains illegal content or activity</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">other reasons</label>
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+      #comment
+      name="comment"
+    ></textarea>
+  </div>
+  <button
+    type="button"
+    (click)="report(name.value, reason.value, comment.value)"
+    class="btn btn-primary"
+  >
+    Primary
+  </button>
+</form>
+<div class="container">
+  <h2>Sent Report</h2>
+  <form action="/action_page.php" class="was-validated">
+    <div class="form-group">
+      <label for="uname">Username:</label>
+      <input type="text" class="form-control" #username />
+      <div class="valid-feedback">you can keep your name anonymous.</div>
+      <label>
+        type of user:
+        <select #typeOfUser class="form-control">
+          <option class="form-control" default="select">anonymos</option>
+          <option class="form-control" value="student"
+            >Uncivil, rude or vulgar</option
+          >
+          <option class="form-control" value="company">Over-posting</option>
+          <option class="form-control" value="training center"
+            >Contains illegal content or activity</option
+          >
+        </select>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="report">Report:</label>
+      <input
+        type="text"
+        class="form-control"
+        type="textarea"
+        #message
+        required
+      />
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <!-- <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" required> Im not a robot!!!.
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Check this checkbox to continue.</div>
+      </label>
+    </div> -->
+    <button
+      type="submit"
+      class="btn btn-outline-light text-dark"
+      (click)="report(username.value, typeOfUser.value, message.value)"
+    >
+      Submit
+    </button>
+  </form>
+</div>

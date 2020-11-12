@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" (click)="backToProfile()">Profile</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" (click)="studentApply()"
+          >Notifications <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="ownPosts()">Posts</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input
+        class="form-control mr-sm-2"
+        type="text"
+        placeholder="Search..."
+        name="search"
+        #search
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        (click)="searchProfil(search.value)"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+</nav>
+
+<!-- <p>student offert</p>
+<div class="companies-container">
+  <div class="card" style="width: 18rem;" *ngFor="let element of application">
+    <div class="card-body">
+      <h5 class="card-title">{{ this.element?.title }}</h5>
+      <a (click)="searchProfil(this.element?.studentName)" class="card-text"
+        >{{ this.element?.studentName }}</a
+      >
+      <button (click)="reject(this.element?.id)">reject</button>
+      <button (click)="accept(this.element?.id , this.element?.studentName)">
+        accept
+      </button>
+    </div>
+  </div>
+</div> -->
+
+<table
+  class="layout display responsive-table"
+  style="width: 80%; margin-left: 10%;"
+>
+  <thead>
+    <tr>
+      <th>Post</th>
+      <th colspan="2">Condident Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of application">
+      <td class="organisationnumber">{{ this.element?.title }}</td>
+      <td class="organisationname">
+        <a (click)="searchProfil(this.element?.studentName)" class="card-text"
+          >{{ this.element?.studentName }}</a
+        >
+      </td>
+      <td class="actions">
+        <a
+          (click)="accept(this.element?.id , this.element?.studentName)"
+          class="edit-item"
+          title="Edit"
+          >Accept</a
+        >
+        <a
+          (click)="reject(this.element?.id)"
+          class="remove-item"
+          style="color: rgb(196, 38, 38);"
+          title="Remove"
+          >Reject</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
