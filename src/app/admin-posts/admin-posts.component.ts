@@ -1,11 +1,12 @@
-import { Component, OnInit } from "@angular/core";
-import { HttpService } from "../http.service";
-import { LocalService } from "../local.service";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
+import { LocalService } from '../local.service';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
-  selector: "app-admin-posts",
-  templateUrl: "./admin-posts.component.html",
-  styleUrls: ["./admin-posts.component.css"],
+  selector: 'app-admin-posts',
+  templateUrl: './admin-posts.component.html',
+  styleUrls: ['./admin-posts.component.css'],
 })
 export class AdminPostsComponent implements OnInit {
   constructor(
@@ -23,41 +24,53 @@ export class AdminPostsComponent implements OnInit {
   seeMore(post) {
     // get the id of the post that you want to delete it
     var obj = { id: post.id };
-    // delete the post and rerender the posts and alert deleted
-    this._http.httpdeletePost(obj).subscribe((data) => {
-      this.ngOnInit();
-      alert("deleted :) ");
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085D6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._http.httpdeletePost(obj).subscribe((data) => {
+          this.ngOnInit();
+        });
+        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+      }
     });
+    // delete the post and rerender the posts and alert deleted
   }
   goback() {
     this.local.redirected = false;
-    this.router.navigateByUrl("/admin/login");
+    this.router.navigateByUrl('/admin/login');
   }
   // go to ban users interface
   ban() {
-    this.router.navigateByUrl("/admin/ban");
+    this.router.navigateByUrl('/admin/ban');
   }
   // go to verification users interface
   verf() {
-    this.router.navigateByUrl("/admin");
+    this.router.navigateByUrl('/admin');
   }
   // go to memberships of training centers interface
   member() {
-    this.router.navigateByUrl("/admin/update");
+    this.router.navigateByUrl('/admin/update');
   }
   post() {
-    this.router.navigateByUrl("/admin/delete");
+    this.router.navigateByUrl('/admin/delete');
   }
   feedback() {
-    this.router.navigateByUrl("/AdminReport");
+    this.router.navigateByUrl('/AdminReport');
   }
   report() {
-    this.router.navigateByUrl("/report/admin");
+    this.router.navigateByUrl('/report/admin');
   }
   adTree() {
-    this.router.navigateByUrl("/tree/admin");
+    this.router.navigateByUrl('/tree/admin');
   }
   coach() {
-    this.router.navigateByUrl("/admin/addCoach");
+    this.router.navigateByUrl('/admin/addCoach');
   }
 }
